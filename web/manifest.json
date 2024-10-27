@@ -1,12 +1,12 @@
 {
-    "name": "avdan",
-    "short_name": "avdan",
+    "name": "Avdan",
+    "short_name": "Avdan",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#313131",
+    "theme_color": "#313131",
+    "description": "Language cards",
+    "orientation": "portrait",
     "prefer_related_applications": false,
     "icons": [
         {

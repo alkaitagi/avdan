@@ -58,17 +58,7 @@
         {
           "current_key": "AIzaSyDcELOLokmnlSv8_I2AnKyqpiAiCYf4Duk"
         }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1014376255744-5g9pqbpjoe02svlhut2ndgp64eck4j75.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
+      ]
     }
   ],
   "configuration_version": "1"

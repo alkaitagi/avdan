@@ -17,6 +17,9 @@ void main() async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const App());
 }
 
@@ -54,9 +57,6 @@ class App extends StatelessWidget {
       home: FutureBuilder(
         future: Future.wait([
           Future<void>.delayed(const Duration(seconds: 2)),
-          Firebase.initializeApp(
-            options: DefaultFirebaseOptions.currentPlatform,
-          ),
           Hive.initFlutter().then(
             (_) async {
               await initPrefs();

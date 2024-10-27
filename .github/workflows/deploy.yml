@@ -1,27 +1,38 @@
-name: Build & Deploy
-
+name: Deploy
 on:
+  workflow_dispatch: {}
   push:
-    branches: [main]
-
+    branches:
+      - main
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
 
-      - name: Install and Build 🔧
-        uses: subosito/flutter-action@v2
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+      - name: Build
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
       - run: |
           flutter pub get
           flutter pub run build_runner build
           flutter build web
-          echo "avdan.raxys.app" > build/web/CNAME
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      
+      - name: Configure
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
-          folder: build/web
+          path: ./build/web
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

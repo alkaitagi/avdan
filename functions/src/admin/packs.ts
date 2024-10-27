@@ -8,12 +8,12 @@ run();
 async function run() {
   const langs = [
     // "abkhaz",
-    "aghul",
+    // "aghul",
     // "dargwa",
     // "digor",
     // "iron",
     // "east circassian",
-    // "kaitag",
+    "kaitag",
     // "kubachi",
     // "kumyk",
   ];
